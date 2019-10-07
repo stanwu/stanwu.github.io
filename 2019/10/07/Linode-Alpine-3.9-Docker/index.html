@@ -3,15 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Archives: 2019/10 | Stan Wu Logs</title>
+  <title>Linode + Alpine 3.9 + Docker | Stan Wu Logs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Stan Wu Logs">
-<meta property="og:url" content="http://stanwu.github.io/archives/2019/10/index.html">
+  <meta name="description" content="Linode 基本上可以很輕易的搭配 Docker，這次採用的是 Alpine 3.9，經過測試基本上使用 Nanode US$5 就可以跑輕量級的 microservice 了。">
+<meta name="keywords" content="docker,script">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linode + Alpine 3.9 + Docker">
+<meta property="og:url" content="http://stanwu.github.io/2019/10/07/Linode-Alpine-3.9-Docker/index.html">
 <meta property="og:site_name" content="Stan Wu Logs">
+<meta property="og:description" content="Linode 基本上可以很輕易的搭配 Docker，這次採用的是 Alpine 3.9，經過測試基本上使用 Nanode US$5 就可以跑輕量級的 microservice 了。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://stanwu.github.io/screenshots/Linode-Alpine-3.9-Docker/18.25.38.png">
+<meta property="og:image" content="http://stanwu.github.io/screenshots/Linode-Alpine-3.9-Docker/18.23.48.png">
+<meta property="og:updated_time" content="2019-10-07T10:56:47.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stan Wu Logs">
+<meta name="twitter:title" content="Linode + Alpine 3.9 + Docker">
+<meta name="twitter:description" content="Linode 基本上可以很輕易的搭配 Docker，這次採用的是 Alpine 3.9，經過測試基本上使用 Nanode US$5 就可以跑輕量級的 microservice 了。">
+<meta name="twitter:image" content="http://stanwu.github.io/screenshots/Linode-Alpine-3.9-Docker/18.25.38.png">
 <meta name="twitter:creator" content="@stanwu">
   
     <link rel="alternate" href="/atom.xml" title="Stan Wu Logs" type="application/atom+xml">
@@ -51,7 +59,7 @@
           <li><a class=""
                  href="/index.html">Home</a></li>
         
-          <li><a class="active"
+          <li><a class=""
                  href="/archives/">Archives</a></li>
         
           <li><a class=""
@@ -78,60 +86,89 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
+          <article id="post-Linode-Alpine-3.9-Docker" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/07/Linode-Alpine-3.9-Docker/">Linode + Alpine 3.9 + Docker</a>
+    <h1 class="article-title" itemprop="name">
+      Linode + Alpine 3.9 + Docker
     </h1>
   
 
 
+  </header>
+
+  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2019/10/07/Linode-Alpine-3.9-Docker/" class="archive-article-date"><time datetime="2019-10-07T15:08:57.000Z" itemprop="datePublished">October 7th</time></a>
+  <a href="/2019/10/07/Linode-Alpine-3.9-Docker/" class="article-date"><time datetime="2019-10-07T15:08:57.000Z" itemprop="datePublished">2019-10-07</time></a>
 </div>
 
-  </header>
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linode/">Linode</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.linode.com/?r=f8919fc90639487d353f141e4bd63739ace68f41" target="_blank" rel="noopener">Linode</a> 基本上可以很輕易的搭配 Docker，這次採用的是 Alpine 3.9，經過測試基本上使用 Nanode US$5 就可以跑輕量級的 microservice 了。  </p>
+<a id="more"></a>
+
+<p>在眾多的服務中，<a href="https://www.linode.com/?r=f8919fc90639487d353f141e4bd63739ace68f41" target="_blank" rel="noopener">Linode</a> 是少數有支援自己的 StackScript 功能，所以您只要將下面的 StackScript 新增然後複製貼上到您自己的 StackScript 中就可以了。</p>
+<h3 id="StackScript"><a href="#StackScript" class="headerlink" title="StackScript"></a>StackScript</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">apk add docker</span><br><span class="line">rc-update add docker boot</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p>硬碟用量</p>
+<p><img src="/screenshots/Linode-Alpine-3.9-Docker/18.25.38.png" alt></p>
+<p>查看實際記憶體用量</p>
+<p>清除快取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 3 &gt; /proc/sys/vm/drop_caches</span><br></pre></td></tr></table></figure>
+
+<p>查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
+
+<p><img src="/screenshots/Linode-Alpine-3.9-Docker/18.23.48.png" alt></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://stanwu.github.io/2019/10/07/Linode-Alpine-3.9-Docker/" data-id="ck1gax6uo0002cg1yckia2dzm" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/script/">script</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2019/10/05/Uninstall-Acrobat-Reader-DC-from-a-Mac/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Acrobat Reader DC macOS版本正確的移除方法</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
 </article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/05/Uninstall-Acrobat-Reader-DC-from-a-Mac/">Acrobat Reader DC macOS版本正確的移除方法</a>
-    </h1>
-  
-
-
-    <div class="article-datetime">
-  <a href="/2019/10/05/Uninstall-Acrobat-Reader-DC-from-a-Mac/" class="archive-article-date"><time datetime="2019-10-05T15:08:57.000Z" itemprop="datePublished">October 5th</time></a>
-</div>
-
-  </header>
-</article>
-
-  
-  
-    </div></section>
-  
 
 
 
