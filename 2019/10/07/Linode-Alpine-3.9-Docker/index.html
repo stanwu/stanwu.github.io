@@ -15,7 +15,7 @@
 <meta property="og:image" content="http://stanwu.github.io/screenshots/Linode-Alpine-3.9-Docker/18.25.38.png">
 <meta property="og:image" content="http://stanwu.github.io/screenshots/Linode-Alpine-3.9-Docker/18.23.48.png">
 <meta property="article:published_time" content="2019-10-07T23:08:57.000Z">
-<meta property="article:modified_time" content="2020-08-09T16:15:40.744Z">
+<meta property="article:modified_time" content="2022-10-20T01:32:11.808Z">
 <meta property="article:author" content="Stan Wu">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="script">
@@ -39,7 +39,7 @@
 
   
 
-<meta name="generator" content="Hexo 5.0.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <nav class="navbar navbar-inverse">
@@ -120,21 +120,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a target="_blank" rel="noopener" href="https://www.linode.com/?r=f8919fc90639487d353f141e4bd63739ace68f41">Linode</a> 基本上可以很輕易的搭配 Docker，這次採用的是 Alpine 3.9，經過測試基本上使用 Nanode US$5 就可以跑輕量級的 microservice 了。  </p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>在眾多的服務中，<a target="_blank" rel="noopener" href="https://www.linode.com/?r=f8919fc90639487d353f141e4bd63739ace68f41">Linode</a> 是少數有支援自己的 StackScript 功能，方便您可以快速的部屬所需要的主機，所以您只要將下面的 StackScript 新增然後複製貼上到您自己的 StackScript 中就可以了。</p>
-<h3 id="StackScript"><a href="#StackScript" class="headerlink" title="StackScript"></a>StackScript</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line"></span><br><span class="line">apk add docker</span><br><span class="line">rc-update add docker boot</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<h3 id="StackScript"><a href="#StackScript" class="headerlink" title="StackScript"></a>StackScript</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line"></span><br><span class="line">apk add docker</span><br><span class="line">rc-update add docker boot</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 <p>硬碟用量</p>
-<p><img src="/screenshots/Linode-Alpine-3.9-Docker/18.25.38.png" alt=""></p>
+<p><img src="/screenshots/Linode-Alpine-3.9-Docker/18.25.38.png"></p>
 <p>查看實際記憶體用量</p>
 <p>清除快取</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 3 &gt; &#x2F;proc&#x2F;sys&#x2F;vm&#x2F;drop_caches</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 3 &gt; /proc/sys/vm/drop_caches</span><br></pre></td></tr></table></figure>
 
 <p>查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -m</span><br></pre></td></tr></table></figure>
 
-<p><img src="/screenshots/Linode-Alpine-3.9-Docker/18.23.48.png" alt=""></p>
+<p><img src="/screenshots/Linode-Alpine-3.9-Docker/18.23.48.png"></p>
 
       
     </div>
@@ -145,7 +145,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://stanwu.github.io/2019/10/07/Linode-Alpine-3.9-Docker/" data-id="cl3jkpqxi000166d41zpa5f0h" class="article-share-link">
+      <a data-url="http://stanwu.github.io/2019/10/07/Linode-Alpine-3.9-Docker/" data-id="cl9ge4ol90001jad4hygddteo" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -188,7 +188,7 @@
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <table><tr> <td><img src="https://s.gravatar.com/avatar/758ccdffd7decc03dcd86756ba4fff32?s=80"> <td> Stan Wu 吳信典現任 KaserNet 研發工程師，公司位於美國的 Fremont CA. 主要的工作為負責解決公司各種問題，喜歡閱讀、博物館看展、慢跑、冥想，歡迎有共同愛好興趣的人跟我聯絡，謝謝。 </table>
+  <table><tr> <td><img src="https://s.gravatar.com/avatar/758ccdffd7decc03dcd86756ba4fff32?s=80"> <td>Stan Wu 吳信典 </table>
 
 </div>
 
